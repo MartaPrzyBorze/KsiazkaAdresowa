@@ -84,8 +84,44 @@ bool wczytajPlik(vector<Kontakt> &kontakty)
 
 bool dodajKontakt(vector<Kontakt> &kontakty)
 {
-    cout<<"Dodawanie kontaktu"<<endl;
-    return true;
+    Kontakt nowyKontakt;
+    fstream bazaKontaktow;
+    int idNowegoKontaktu = 1;
+
+    if(kontakty.size()>0)
+    {
+        idNowegoKontaktu = kontakty[kontakty.size()-1].id + 1;
+    }
+
+    bazaKontaktow.open( "bazaKontaktow.txt", std::ofstream::out | std::ofstream::trunc);
+    system("cls");
+    cout<<"DODAWANIE ADRESATA"<<endl;
+    nowyKontakt.id = idNowegoKontaktu;
+    cout<<"Podaj imie: ";
+    cin>>nowyKontakt.imie;
+    cout<<"Podaj nazwisko: ";
+    cin>>nowyKontakt.nazwisko;
+    cout << "Podaj numer telefonu: ";
+    cin.sync();
+    getline(cin, nowyKontakt.numerTelefonu);
+    cout << "Podaj email: ";
+    cin >> nowyKontakt.email;
+    cout << "Podaj adres: ";
+    cin.sync();
+    getline(cin, nowyKontakt.adres);
+    cout << endl;
+
+    kontakty.push_back(nowyKontakt);
+
+    if( bazaKontaktow.good())
+    {
+        bazaKontaktow<<nowyKontakt.id<<"|"<<nowyKontakt.imie<<"|"<<nowyKontakt.nazwisko<<"|"<<nowyKontakt.numerTelefonu<<"|"<<nowyKontakt.email<<"|"<<nowyKontakt.adres<<"|"<<endl;
+        bazaKontaktow.close();
+        cout<<"Udalo sie zapisac!";
+        return true;
+    }
+    else return false;
+
 }
 
 void wyszukajPoImieniu(vector <Kontakt> &kontakty)

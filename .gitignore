@@ -1,2 +1,5 @@
 *.layout
 *.cbp
+bazaKontaktow.txt
+bin/
+obj/
