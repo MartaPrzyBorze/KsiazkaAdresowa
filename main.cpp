@@ -117,7 +117,6 @@ bool dodajKontakt(vector<Kontakt> &kontakty)
     {
         bazaKontaktow<<nowyKontakt.id<<"|"<<nowyKontakt.imie<<"|"<<nowyKontakt.nazwisko<<"|"<<nowyKontakt.numerTelefonu<<"|"<<nowyKontakt.email<<"|"<<nowyKontakt.adres<<"|"<<endl;
         bazaKontaktow.close();
-        cout<<"Udalo sie zapisac!";
         return true;
     }
     else return false;
