@@ -126,7 +126,26 @@ bool dodajKontakt(vector<Kontakt> &kontakty)
 
 void wyszukajPoImieniu(vector <Kontakt> &kontakty)
 {
-    cout<<"Imie"<<endl;
+    system("cls");
+    cout<<"WYSZUKIWANIE PO IMIENIU:"<<endl;
+    cout<<"Podaj imie do wyszukania: ";
+    string imie;
+    cin>>imie;
+    for (int i=0; i<kontakty.size(); i++)
+    {
+        if (kontakty[i].imie==imie)
+        {
+            cout<<kontakty[i].id<<endl;
+            cout<<kontakty[i].imie<<endl;
+            cout<<kontakty[i].nazwisko<<endl;
+            cout<<kontakty[i].numerTelefonu<<endl;
+            cout<<kontakty[i].email<<endl;
+            cout<<kontakty[i].adres<<endl;
+        }
+    }
+    cout<<endl<<"Nacisnij dowolny przycisk"<<endl;
+    char c = _getch();
+
 }
 
 void wyszukajPoNazwisku(vector <Kontakt> &kontakty)
