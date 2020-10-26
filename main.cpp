@@ -149,9 +149,3 @@ bool usunKontakt(vector<Kontakt> &kontakty)
     cout<<"kontakt usuniety"<<endl;
     return true;
 }
-
-bool zapiszDoPliku(vector<Kontakt> &kontakty)
-{
-    cout<<"Zapisywanie do pliku"<<endl;
-    return true;
-}
