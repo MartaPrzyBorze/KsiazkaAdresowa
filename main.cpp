@@ -150,7 +150,25 @@ void wyszukajPoImieniu(vector <Kontakt> &kontakty)
 
 void wyszukajPoNazwisku(vector <Kontakt> &kontakty)
 {
-    cout<<"Nazwisko"<<endl;
+    system("cls");
+    cout<<"WYSZUKIWANIE PO IMIENIU:"<<endl;
+    cout<<"Podaj nazwisko do wyszukania: ";
+    string nazwisko;
+    cin>>nazwisko;
+    for (int i=0; i<kontakty.size(); i++)
+    {
+        if (kontakty[i].nazwisko==nazwisko)
+        {
+            cout<<kontakty[i].id<<endl;
+            cout<<kontakty[i].imie<<endl;
+            cout<<kontakty[i].nazwisko<<endl;
+            cout<<kontakty[i].numerTelefonu<<endl;
+            cout<<kontakty[i].email<<endl;
+            cout<<kontakty[i].adres<<endl;
+        }
+    }
+    cout<<endl<<"Nacisnij dowolny przycisk"<<endl;
+    char c = _getch();
 }
 
 void wypiszWszystkieKontakty(vector <Kontakt> &kontakty)
