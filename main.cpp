@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <vector>
+#include <conio.h>
 
 using namespace std;
 
@@ -136,7 +137,18 @@ void wyszukajPoNazwisku(vector <Kontakt> &kontakty)
 
 void wypiszWszystkieKontakty(vector <Kontakt> &kontakty)
 {
-    cout<<"Wszystkie kontakty"<<endl;
+    system("cls");
+    for (int i=0; i<kontakty.size(); i++)
+    {
+        cout<<kontakty[i].id<<endl;
+        cout<<kontakty[i].imie<<endl;
+        cout<<kontakty[i].nazwisko<<endl;
+        cout<<kontakty[i].numerTelefonu<<endl;
+        cout<<kontakty[i].email<<endl;
+        cout<<kontakty[i].adres<<endl;
+    }
+    cout<<endl<<"Nacisnij dowolny przycisk"<<endl;
+    char c = _getch();
 }
 
 void edytujKontakt(vector <Kontakt> &kontakty)
@@ -147,11 +159,5 @@ void edytujKontakt(vector <Kontakt> &kontakty)
 bool usunKontakt(vector<Kontakt> &kontakty)
 {
     cout<<"kontakt usuniety"<<endl;
-    return true;
-}
-
-bool zapiszDoPliku(vector<Kontakt> &kontakty)
-{
-    cout<<"Zapisywanie do pliku"<<endl;
     return true;
 }
